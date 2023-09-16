@@ -68,3 +68,43 @@ MachinegunToGrenadelauncher(){
 		}
 	}
 }
+
+TraceToGrenadelauncher(){
+	Sleep, 1000
+	Loop{
+		PixelGetColor, color, 400, 900
+        if (color = 0xFEFEFE or color = 0xFFFFFF){
+			MsgBox, %color%
+			Reload
+		}
+		Else{
+		Send, {Esc}
+		Sleep, 1000
+		Send, d
+		Sleep, 100
+		Send, s
+		Sleep, 100
+		Send, s
+		Sleep, 100
+		Send, s
+		Sleep, 100
+		Send, s
+		Sleep, 100
+		Send, s
+		Sleep, 400
+		
+		MouseMove, 1300, 400
+		Sleep, 50
+		Send, {Click}
+		Send, d
+		Sleep, 60
+		Send, {Click}
+		Sleep, 50
+		Send, {Click}
+		Sleep, 50
+		Send, {Click}
+		MouseMove, 400, 650
+		Sleep, 2000
+		}
+	}
+}
